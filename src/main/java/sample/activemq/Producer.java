@@ -49,7 +49,7 @@ public class Producer implements CommandLineRunner {
 //        jmsTemplate.send(this.queue, messageCreator);
         System.out.println("Sending a new message.");
         this.jmsMessagingTemplate.convertAndSend(this.queue, msg);
-        this.jmsMessagingTemplate.convertAndSend("testing", msg);
+        this.jmsMessagingTemplate.convertAndSend("testing", msg + "AAA");
     }
 
 }

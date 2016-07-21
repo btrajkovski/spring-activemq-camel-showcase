@@ -34,4 +34,9 @@ public class Consumer {
         System.out.printf("Receiving new queue %d: %s\n", counter++, text);
     }
 
+    @JmsListener(destination = "redirected")
+    public void receiveRedirectedQueue(String text) {
+        System.out.printf("Receiving redirected queue %d: %s\n", counter++, text);
+    }
+
 }
