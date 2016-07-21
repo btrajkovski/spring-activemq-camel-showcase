@@ -11,6 +11,7 @@ public class MyRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 //        Camel processing from jms in Bean
-        from("jms:sample.queue").bean(MyBean.class, "doSomething");
+//        from("jms:sample.queue").bean(MyBean.class, "doSomething");
+        from("jms:sample.queue").to("jms:redirected");
     }
 }
