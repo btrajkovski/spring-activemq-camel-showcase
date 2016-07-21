@@ -30,7 +30,7 @@ public class Consumer {
     }
 
     @JmsListener(destination = "testing")
-    public void receiveCustomQueue(String text) {
+    public void receiveTestingQueue(String text) {
         System.out.printf("Receiving new queue %d: %s\n", counter++, text);
     }
 

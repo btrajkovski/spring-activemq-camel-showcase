@@ -16,12 +16,8 @@
 
 package sample.activemq;
 
-import javax.jms.ConnectionFactory;
-import javax.jms.Queue;
-
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,33 +25,38 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.connection.CachingConnectionFactory;
 
+import javax.jms.ConnectionFactory;
+import javax.jms.Queue;
+
 @SpringBootApplication
 @EnableJms
 public class SampleActiveMQApplication {
-	@Value("${spring.activemq.broker-url}")
-	private String brokerUrl;
+    @Value("${spring.activemq.broker-url}")
+    private String brokerUrl;
 
-	@Value("${spring.activemq.user}")
-	private String username;
+    @Value("${spring.activemq.user}")
+    private String username;
 
-	@Value("${spring.activemq.password}")
-	private String password;
+    @Value("${spring.activemq.password}")
+    private String password;
 
-	@Bean
-	public ConnectionFactory connectionFactory() {
-		ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(username, password, brokerUrl);
+    @Bean
+    public ConnectionFactory connectionFactory() {
+        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(username, password, brokerUrl);
+
+//      setting connection factory with sync or async send
 //		connectionFactory.setUseAsyncSend(true);
 //		connectionFactory.setAlwaysSyncSend(true);
-		return new CachingConnectionFactory(connectionFactory);
-	}
+        return new CachingConnectionFactory(connectionFactory);
+    }
 
-	@Bean
-	public Queue queue() {
-		return new ActiveMQQueue("sample.queue");
-	}
+    @Bean
+    public Queue queue() {
+        return new ActiveMQQueue("sample.queue");
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SampleActiveMQApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SampleActiveMQApplication.class, args);
+    }
 
 }
