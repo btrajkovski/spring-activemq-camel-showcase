@@ -2,7 +2,7 @@
 
 Showcase project with a basic Spring Boot + ActiveMQ + Apache Camel setup containg few diffrent scenarios and examples. 
 
-Techologies used:
+Technologies used:
 * Spring Boot
 * ActiveMQ
 * Apache Camel
