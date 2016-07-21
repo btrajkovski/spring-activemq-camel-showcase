@@ -14,3 +14,5 @@ Some of examples shown here:
 * Connecting to external ActiveMQ server
 * Multiple ActiveMQ queues
 * Camel bean processor
+* JMS Camel routing (from one JMS queue to another JMS queue)
+* ActiveMQ Spring testing
