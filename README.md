@@ -1,5 +1,8 @@
 # spring-activemq-camel-showcase
 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/af789c90790041d78b661e4f0e3b3ed2)](https://www.codacy.com/app/leetz-spy/spring-activemq-camel-showcase?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=btrajkovski/spring-activemq-camel-showcase&amp;utm_campaign=badger)
+
 Showcase project with a basic Spring Boot + ActiveMQ + Apache Camel setup containg few diffrent scenarios and examples. 
 
 Technologies used:
